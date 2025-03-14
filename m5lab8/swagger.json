@@ -1,0 +1,59 @@
+
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Product API",
+      "version": "1.0.0",
+      "description": "API to fetch products and categories"
+    },
+    "paths": {
+      "/products": {
+        "get": {
+          "tags": ["Products"],
+          "summary": "Get all products",
+          "responses": {
+            "200": {
+              "description": "List of products",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": { "type": "integer" },
+                        "title": { "type": "string" },
+                        "price": { "type": "number" },
+                        "description": { "type": "string" },
+                        "category": { "type": "string" },
+                        "image": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/products/categories": {
+        "get": {
+          "tags": ["Products"],
+          "summary": "Get all product categories",
+          "responses": {
+            "200": {
+              "description": "List of product categories",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
